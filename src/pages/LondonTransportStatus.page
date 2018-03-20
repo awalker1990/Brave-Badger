@@ -1,0 +1,19 @@
+<apex:page showHeader="false" sidebar="false" controller="LondonTransportStatusController">
+
+	<apex:stylesheet value="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
+	<apex:includeScript value="https://code.jquery.com/jquery-3.1.1.slim.min.js" />
+	<apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" />
+	<apex:includeScript value="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" />
+
+
+	<apex:form >
+		<div class="row" style="width: 30%; margin-left:10%; margin-top: 50px;">
+		<apex:dataTable value="{!TubeStatus}" var="s" styleClass="table table-sm" >
+			<apex:column headerValue="Line" value="{!s.tubeLine}" styleClass="'bg-primary"/>
+			<apex:column headerValue="Current Status" value="{!s.tubeStatus}" styleClass="{!IF(s.tubeStatus == 'Good Service', 'bg-success', 'bg-danger')}"  />
+		</apex:dataTable>
+		</div>
+
+	</apex:form>
+    
+</apex:page>

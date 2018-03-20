@@ -1,0 +1,44 @@
+<!--
+** Created by Adam Walker - 4C
+** 08-08-17
+** VF Page to Add, delete and update multiple contacts on the Account Page
+-->
+<apex:page standardController="Account" extensions="AccountContactsExtension" showHeader="true" sidebar="true">
+	
+	<apex:form >
+		<apex:pageBlock >
+			
+            <!--Page Messages Area -->
+            <apex:outputPanel id="msg" >
+				<apex:pageMessages />
+			</apex:outputPanel>
+			
+            <!--Page Buttons-->
+			<apex:pageBlockButtons >
+                <apex:commandButton value="Delete" action="{!deleteContacts}" reRender="table, msg" />
+				<apex:commandButton value="Add Contact" action="{!addContact}" reRender="table, msg"/>
+				<apex:commandButton value="Save" action="{!saveContact}" reRender="msg" />
+			</apex:pageBlockButtons>
+            
+            <!--Table-->
+				<apex:pageBlockTable value="{!Contacts}" var="c" id="table">
+					<apex:column >
+						<apex:inputCheckbox value="{!c.Selected}" />
+					</apex:column>
+					<apex:column headerValue="FirstName" >
+						<apex:inputField value="{!c.con.FirstName}" />
+					</apex:column>
+					<apex:column headerValue="Last Name" >
+						<apex:inputField value="{!c.con.LastName}" required="false"/>
+					</apex:column>
+					<apex:column headerValue="Phone" >
+						<apex:inputField value="{!c.con.Phone}" />
+					</apex:column>
+					<apex:column headerValue="Email" >
+						<apex:inputField value="{!c.con.Email}" />
+					</apex:column>
+				</apex:pageBlockTable>
+            
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>adam.walker@weare4c.com</contactEmail>
+    <ipRanges>
+        <description>Adams 4C IP</description>
+        <end>85.95.97.66</end>
+        <start>85.95.97.66</start>
+    </ipRanges>
+    <label>Trailhead Authorisation</label>
+    <oauthConfig>
+        <callbackUrl>callback:test</callbackUrl>
+        <consumerKey>3MVG9HxRZv05HarRv9N03yy4SFae0SOBOp6CEkIV6ippIjf1oNAasjGeNTLdP1AM375OutSDKPYVQLV4aN.Mi</consumerKey>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>Chatter</scopes>
+    </oauthConfig>
+</ConnectedApp>

@@ -1,0 +1,26 @@
+<apex:page showHeader="true" sidebar="true" Controller="FileClaimExtension">
+
+	<apex:form >
+		<apex:pageblock >
+
+			<apex:pageBlockButtons >
+				<apex:commandButton value="Save Claim" action="{!step2}" />
+			</apex:pageBlockButtons>
+
+			<apex:outputPanel id="msg" >
+				<apex:pageMessages />
+			</apex:outputPanel>
+
+			<apex:pageblockSection columns="1">
+				<!--Contact Form -->
+				
+				<apex:inputField label="Reason" value="{!claim.Reason__c}"  required="true" />
+				<apex:inputField label="Type" value="{!claim.Type__c}"  required="true" />
+				<apex:inputField label="Status" value="{!claim.Status__c}"  required="true" />
+
+			</apex:pageBlockSection>
+
+		</apex:pageblock>
+	</apex:form>
+	
+</apex:page>

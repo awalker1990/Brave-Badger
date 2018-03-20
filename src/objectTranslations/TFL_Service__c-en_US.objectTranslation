@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>TFL Service</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>TFL Service</value>
+    </caseValues>
+    <fields>
+        <label><!-- Applciation Keys --></label>
+        <name>Applciation_Keys__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application ID --></label>
+        <name>Application_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Include details of the disruptions that are causing the line status including the affected stops and routes --></help>
+        <label><!-- Detail --></label>
+        <name>Detail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Endpoint URL --></label>
+        <name>Endpoint_URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- A comma-separated list of modes to filter by. e.g. tube,dlr --></help>
+        <label><!-- Mode --></label>
+        <name>Mode__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

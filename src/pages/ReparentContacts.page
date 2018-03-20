@@ -1,0 +1,29 @@
+<!--
+** Adam Walker - 4c
+** 08-08-17
+** VF page to reparent selected contacts from a contact list view button
+-->
+<apex:page showHeader="true" sidebar="true" standardController="Contact" recordSetVar="Contacts" Extensions="ReparentContactsExtension" >
+
+	<apex:form >
+		<apex:pageBlock >
+		
+        <!--Page Messages area -->
+        <apex:outputPanel id="msg">
+        	<apex:pageMessages />
+        </apex:outputPanel>
+            
+		<!--Buttons area -->
+			<apex:pageBlockButtons >
+				<apex:commandButton value="Move to Account" action="{!processContacts}" reRender="msg" />
+			</apex:pageBlockButtons>
+
+		<!--Form Input Area-->
+			<apex:pageBlockSection >
+				<apex:inputField value="{!myCon.AccountId}" />
+			</apex:pageBlockSection>
+
+		</apex:pageBlock>
+	</apex:form>
+	
+</apex:page>

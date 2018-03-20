@@ -1,0 +1,37 @@
+<apex:page showHeader="false" sidebar="false" standardController="Account" extensions="AccountWeatherForecastExtension">
+
+
+	<apex:sectionHeader title="5 Day Forecast in {!Account.BillingCity}" />
+
+  <apex:pageBlock >
+    <apex:chart height="500" width="1400" data="{!Weather}">
+      <apex:legend position="right"/>
+
+        <apex:axis type="Numeric" position="left" fields="temp" title="Temperature" grid="true"/>
+        <apex:axis type="Numeric" position="right" fields="humid" title="Humidity" />
+        <apex:axis type="Category" position="bottom" fields="plotTime" title="Time" >
+          <apex:chartLabel rotate="315"/>
+        </apex:axis>
+        <apex:lineSeries title="Temperature" axis="left" xField="plotTime" yField="temp" fill="true" markerType="cross" markerSize="4" markerFill="#FF0000"/>
+        <apex:lineSeries title="Humidity" axis="right" xField="plotTime" yField="humid" fill="true" markerType="cross" markerSize="4" markerFill="#FF0000"/>
+    </apex:chart>
+
+  </apex:pageBlock>
+
+
+
+
+<apex:pageBlock >	
+	<apex:form >
+
+  <apex:pageBlockTable value="{!Weather}" var="w"  >
+    <apex:column value="{!w.plotTime}" headerValue="Time" />
+    <apex:column value="{!w.temp}" headerValue="Temperature" />
+    <apex:column value="{!w.humid}" headerValue="Humidity" />
+  </apex:pageBlockTable>
+  </apex:form>
+  </apex:pageBlock>
+
+
+
+</apex:page>

@@ -1,0 +1,39 @@
+<apex:page controller="WrapperExamplesController" showHeader="false" sidebar="false">
+
+    <apex:slds />
+    
+    <!--SLDS wrapper-->
+    <div class="slds-scope" >
+    	<apex:dataTable value="{!contactList}" var="c" id="theTable" rowClasses="odd,even" styleClass="slds-table slds-table_bordered slds-table_cell-buffer">
+        <apex:column >
+            <apex:form >
+            	<apex:inputCheckbox value="{!c.selected}" />
+            </apex:form>
+            <apex:includeScript value='<a target="_blank" href="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" rel="nofollow">http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js</a>'  />
+            	<script type="text/javascript">
+                                jQuery.noConflict();
+                                jQuery(document).ready(function(){
+                                    jQuery('input[type=checkbox]').change(function(){
+                                        if(jQuery(this).is(':checked')){
+                                            jQuery('input[type=checkbox]').attr('disabled',true);
+                                            jQuery(this).attr('disabled','');
+                                        }
+                                        else{
+                                                jQuery('input[type=checkbox]').attr('disabled','');
+                                        }
+                                        console.log('Changed');
+                                    });
+                                   
+                                });
+               	</script> 
+        </apex:column>           
+        <apex:column >
+            <apex:facet name="header">Contact</apex:facet>
+            <apex:outputText value="{!c.con.name}"/>
+        </apex:column>
+    </apex:dataTable>
+    
+    </div>
+    <!--SLDS wrapper-->
+    
+</apex:page>

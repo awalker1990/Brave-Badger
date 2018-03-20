@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>adam.aj.walker@gmail.com</contactEmail>
+    <ipRanges>
+        <description>Dreamfactory</description>
+        <end>129.146.86.151</end>
+        <start>129.146.86.151</start>
+    </ipRanges>
+    <label>DreamFactory</label>
+    <oauthConfig>
+        <callbackUrl>callback:test</callbackUrl>
+        <consumerKey>3MVG9HxRZv05HarRv9N03yy4SFQGHtvHW_ao9XopZtL3kaFt16W2IpzP5XwyZau6Q8i_XTKrs733yqS0sDwNU</consumerKey>
+        <scopes>Full</scopes>
+    </oauthConfig>
+</ConnectedApp>

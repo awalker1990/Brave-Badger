@@ -1,0 +1,12 @@
+<aura:component >
+    
+    <aura:attribute name="newItem" type="Camping_Item__c" 
+     default="{ 'sobjectType': 'Camping_Item__c',
+                    'Price__c': 0,
+                    'Quantity__c': 0 }"/>
+	<aura:attribute name="items" type="Camping_Item__c[]"/>
+	
+    <c:campingHeader />
+    <c:campingList />
+    
+</aura:component>

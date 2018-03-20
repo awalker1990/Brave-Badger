@@ -1,0 +1,40 @@
+<apex:page docType="html-5.0"  sidebar="false" showHeader="false" StandardController="Opportunity" extensions="OpportunityProductsExtension" >
+
+	<vs:importvisualstrap theme="paper" />
+
+	<vs:visualstrapblock >
+	
+		<apex:form >
+			<!--Button Area -->
+			<div style="margin-bottom: 8px; margin-left: 300px">
+				
+			<apex:commandButton styleClass="btn btn-primary" value="Add Product" action="{!addLineItem}"/>
+			<apex:commandButton styleClass="btn btn-danger" style="margin-left: 5px" value="Delete" action="{!deleteOppLines}" rerender="tab, table" />
+			<apex:commandButton styleClass="btn btn-primary" style="margin-left: 5px" value="Save" action="{!saveChanges}" rerender="tab, table" />
+			</div>
+
+			<apex:outputPanel id="tab" >
+			<apex:dataTable value="{!OpportunityProducts}" var="line" styleClass="table" id="table">
+				<apex:column >
+					<apex:inputCheckbox value="{!line.Selected}" />
+				</apex:column>
+				<apex:column headerValue="Product" >
+					<apex:inputField value="{!line.pbe.Product2Id}" required="false" style="width: 700px" onSelect="price()" />
+					
+				</apex:column>
+				<apex:column headerValue="Quantity" >
+					<apex:inputField value="{!line.oppLine.Quantity}" required="false"/>
+				</apex:column>
+				<apex:column headerValue="Price">
+							<apex:inputField value="{!line.oppLine.UnitPrice}" />
+				</apex:column>
+			</apex:dataTable>
+			</apex:outputPanel>
+			
+			<apex:actionFunction name="price" action="{!calculatePrice}" reRender="tab, table" />
+		</apex:form>
+		
+	</vs:visualstrapblock>
+
+
+</apex:page>

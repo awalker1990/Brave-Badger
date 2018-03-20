@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>TFL API Credentials</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Applciation_Keys__c</fullName>
+        <externalId>false</externalId>
+        <label>Applciation Keys</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application_ID__c</fullName>
+        <description>Application ID</description>
+        <externalId>false</externalId>
+        <label>Application ID</label>
+        <length>8</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Detail__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Include details of the disruptions that are causing the line status including the affected stops and routes</inlineHelpText>
+        <label>Detail</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Endpoint_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Endpoint URL</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mode__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>A comma-separated list of modes to filter by. e.g. tube,dlr</inlineHelpText>
+        <label>Mode</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>TFL Service</label>
+    <visibility>Public</visibility>
+</CustomObject>
